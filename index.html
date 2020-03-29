@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover">
+    <meta name="description" content=""> <!--150 characters-->
+
+    <!-- Vendor -->
+    <link href="https://fonts.googleapis.com/css?family=Inria+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/fontawesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/solid.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/brands.min.css" rel="stylesheet">
+
+    <!-- <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/page.html">
+    <meta property="og:title" content="Content Title">
+    <meta property="og:image" content="https://example.com/image.jpg">
+    <meta property="og:description" content="Description Here">
+    <meta property="og:site_name" content="Site Name">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@site_account">
+    <meta name="twitter:creator" content="@individual_account">
+    <meta name="twitter:url" content="https://example.com/page.html">
+    <meta name="twitter:title" content="Content Title">
+    <meta name="twitter:description" content="Content description less than 200 characters">
+    <meta name="twitter:image" content="https://example.com/image.jpg"> -->
+    
+    <!-- <link rel="icon" type="image/png" href="https://example.com/favicon.png"> -->
+    <link rel="stylesheet" href="style/style.css">
+    <title>Front-End React Web Developer | Kenny Sutherland</title>
+</head>
+<body>
+    <noscript>Please enable JavaScript to proceed.</noscript>
+    <canvas></canvas>
+    <nav class='main_nav'>
+        <button class="burger" id="menu_btn" tabindex="1">
+            <span class="bar"></span>
+        </button>
+
+        <div class="nav_content">
+            <ul class="nav_list">
+                <li class='nav_item' tabindex="2" data-id="about">Home</li>
+                <li class='nav_item' tabindex="3" data-id="skills">Skills</li>
+                <li class='nav_item' tabindex="4" data-id="projects">Projects</li>
+                <li class='nav_item' tabindex="6" data-id="contact">Contact</li>
+                <li class="hover"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <aside id="cover">
+        <h1 class="title">Front-End <br> Web Developer</h1>
+        <h2 class='descr'>Hello, I'm Kenny Sutherland and I enjoy the process of creating amazing user experiences.</h2>
+        <button id='contact_btn' onclick="location.href='/#contact'" tabindex="7">Hire me!</button>
+        <div class="social_links">
+            <a target="_blank" tabindex="8" href="https://github.com/VektorTech">
+                <div class="github"><i class="fab fa-github fa-3x"></i></div>
+            </a>
+        </div>
+        <p class='text'>Made with Vanilla.</p>
+        <p class='text'>Kenny Sutherland &copy; 2020</p>
+    </aside>
+
+    <main>
+        <section id="about">
+            <div class="container3d">
+            <div class="scene3d">
+                <div class="card">
+                    <h2 class='sub_head'>first</h2>
+                    <p class='sub_text'>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, reiciendis! Accusamus obcaecati ipsam expedita ratione commodi assumenda consequatur iure corrupti cupiditate itaque, dignissimos quo fugiat, nesciunt veniam blanditiis unde sunt!
+                    </p> 
+                </div>
+                
+                <div class="card">
+                    <h2 class='sub_head'>second</h2>       
+                    <p class='sub_text'>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, reiciendis! Accusamus obcaecati ipsam expedita ratione commodi assumenda consequatur iure corrupti cupiditate itaque, dignissimos quo fugiat, nesciunt veniam blanditiis unde sunt!
+                    </p> 
+                </div>
+                
+                <div class="card">
+                    <h2 class='sub_head'>third</h2>
+                    <p class='sub_text'>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, reiciendis! Accusamus obcaecati ipsam expedita ratione commodi assumenda consequatur iure corrupti cupiditate itaque, dignissimos quo fugiat, nesciunt veniam blanditiis unde sunt!
+                    </p> 
+                </div>
+
+                <div class="card">
+                    <h2 class='sub_head'>fourth</h2>
+                    <p class='sub_text'>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, reiciendis! Accusamus obcaecati ipsam expedita ratione commodi assumenda consequatur iure corrupti cupiditate itaque, dignissimos quo fugiat, nesciunt veniam blanditiis unde sunt!
+                    </p> 
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class='heading'>Technical Skills</h2>
+            <p class='sub_text'>A versatile array of skills enabling me to work on both front and back end.</p>
+            <div id="tiles"></div>
+        </section>
+
+        <section id="projects">
+            <a id="js-proj_link" target="_blank" href=""></a>
+            <i class="proj-arrow fas fa-chevron-circle-left"></i>
+            <i class="proj-arrow fas fa-chevron-circle-right"></i>
+
+            <div class="nav_dots"></div>
+        </section>
+
+        <section id="contact">
+            <h2 class='heading'>Contact Me</h2>
+            <form action="/" method="POST">
+                <label for='name' class='sub_head'>Name<span class='red_text'>*</span></label>
+                <input pattern="[A-za-z\s]{4,50}" minlength="4" maxlength="50" 
+                    title="Enter your name (4 to 50 characters long)" 
+                    required id='name' placeholder="John Brown" name='name' type="text">
+
+                <label for='email' class='sub_head'>Email<span class='red_text'>*</span></label>
+                <input minlength="3" maxlength="100" title="Enter your email (10 to 100 characters long)"  
+                    required placeholder="johnbrown@example.com" type="email" name="email" id="email">
+
+                <label for='message' class='sub_head'>Message<span class='red_text'>*</span></label>
+                <textarea minlength="100" maxlength="3000" title="Enter your message (100 to 3000 characters long)"
+                required name='message' placeholder="Let's get started!" id="message"></textarea>
+
+                <input type="submit" title="Submit" value="Send">
+            </form>
+        </section>
+    </main>
+
+    <script async src="js/script.es6"></script>
+</body>
+</html>
+
+<!-- 404 page create -->
