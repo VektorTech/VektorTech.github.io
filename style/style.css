@@ -16,6 +16,7 @@ html {
 }
 
 body {
+  visibility: hidden;
   background-color: #233342;
 }
 

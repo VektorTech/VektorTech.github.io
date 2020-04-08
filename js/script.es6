@@ -1,5 +1,6 @@
-const init = () => {
+const init = async () => {
     "use strict";
+    document.body.style.visibility = 'visible';
     
     /** Contact Button */
     {
@@ -75,7 +76,7 @@ const init = () => {
     /** Tiles */
     {
         const tiles = document.getElementById('tiles');   
-        fetch('/icons.json').then(data => data.json()).then((obj) => {
+        await fetch('/icons.json').then(data => data.json()).then((obj) => {
             obj.data.map( (item, i) => {
                 const prop = document.createElement('div');
                 prop.id = item[0];
