@@ -60,6 +60,13 @@ canvas {
   color: red;
 }
 
+.spinner {
+  background-color: pink;
+  width: 20rem;
+  height: 20rem;
+  position: fixed;
+}
+
 /** Right Aside Elements **/
 aside {
   position: fixed;
@@ -881,18 +888,18 @@ main section#projects .nav_dots {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  visibility: hidden;
   bottom: 10%;
 }
 
 main section#projects .nav_dots .dot {
-  visibility: visible;
+  visibility: hidden;
   margin: 0 .5rem;
   opacity: .5;
 }
 
 main section#projects .nav_dots .dot::after {
   content: '';
+  visibility: visible;
   position: absolute;
   width: 1.2rem;
   height: 1.2rem;

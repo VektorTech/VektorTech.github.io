@@ -1,5 +1,6 @@
 const init = () => {
     "use strict";
+    document.getElementsByClassName('spinner')[0].style.display = 'none';
     document.body.style.display = 'block';
     
     /** Contact Button */

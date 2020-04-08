@@ -94,6 +94,13 @@ canvas {
     color: red;
 }
 
+.spinner {
+    background-color: pink;
+    width: 20rem;
+    height: 20rem;
+    position: fixed;
+}
+
 /** Right Aside Elements **/
 aside {
     @keyframes intro {
@@ -620,16 +627,16 @@ main {
                 position: absolute;
                 width: fit-content;
                 align-self: center;
-                visibility: hidden;
                 bottom: 10%;
                 
                 & .dot {
-                    visibility: visible;
+                    visibility: hidden;
                     margin: 0 .5rem;
                     opacity: .5;
-
+                    
                     &::after {
                         content: '';
+                        visibility: visible;
                         position: absolute;
                         width: 1.2rem;
                         height: 1.2rem;
