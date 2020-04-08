@@ -1,6 +1,6 @@
 const init = () => {
     "use strict";
-    document.body.style.visibility = 'visible';
+    document.body.style.display = 'block';
     
     /** Contact Button */
     {
@@ -199,7 +199,7 @@ const init = () => {
         });
         
         const nav_dots = document.getElementsByClassName('nav_dots')[0];
-        nav_dots.style.left = `calc(50% - ${proj_len*1.5}rem)`;
+        nav_dots.style.left = `calc(50% - ${proj_len*1.25}rem)`;
         
         const dots = [...Array(proj_len)].map((_, i) => {
             const dot = document.createElement('input');
@@ -235,14 +235,14 @@ const init = () => {
         resizeCanvas();
 
         const ctx = canvas.getContext('2d');
-        const STAR_COUNT = 50;
+        const STAR_COUNT = 30;
 
         class Star {
             constructor(){
                 this.recalculate();
-                this.radius = ~~(Math.random() * (3 - 1 + 1)) + 1; // random() * (max - min + 1) + min = [min...max];
+                this.radius = ~~(Math.random() * (2 - 1 + 1)) + 1; // random() * (max - min + 1) + min = [min...max];
                 this.yIncrease = 0;
-                this.ySpeed = 1 - 2 * this.radius / 10 // Bigger ones should go slower
+                this.ySpeed = 1 - 2 * this.radius / 5 // Bigger ones should go slower
             }
 
             rise() {
@@ -266,7 +266,7 @@ const init = () => {
         const draw = ({x, y, radius, yIncrease, ySpeed}) => {
             ctx.beginPath();// canvas won't clear without this
             ctx.arc(x, y - yIncrease * ySpeed, radius, 0, 2 * Math.PI, false);
-            ctx.fillStyle = "#999";
+            ctx.fillStyle = "#888";
             ctx.fill();
         };
 

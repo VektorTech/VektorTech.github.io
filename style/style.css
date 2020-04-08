@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  visibility: hidden;
+  display: none;
   background-color: #233342;
 }
 
@@ -106,16 +106,7 @@ aside {
     width: 100%;
     margin: 0;
     padding: 10%;
-    padding-top: 35%;
-  }
-}
-
-@media (min-width: 567px) and (max-width: 599px) {
-  aside {
-    z-index: -1;
-    width: 100%;
-    margin: 0;
-    padding: 5%;
+    padding-top: 20%;
   }
 }
 
@@ -141,14 +132,6 @@ aside .title {
 }
 
 @media screen and (max-width: 600px) {
-  aside .title {
-    font-size: 3rem;
-    width: 70%;
-    white-space: normal;
-  }
-}
-
-@media (min-width: 567px) and (max-width: 599px) {
   aside .title {
     font-size: 3rem;
     width: 70%;
@@ -200,12 +183,6 @@ aside .social_links {
 }
 
 @media (min-width: 601px) and (max-width: 823px) {
-  aside .social_links {
-    float: right;
-  }
-}
-
-@media (min-width: 567px) and (max-width: 599px) {
   aside .social_links {
     float: right;
   }
@@ -289,12 +266,6 @@ aside .text {
   }
 }
 
-@media (min-width: 567px) and (max-width: 599px) {
-  .main_nav .nav_content.active {
-    width: 80vw;
-  }
-}
-
 .main_nav .nav_content .nav_list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -318,14 +289,6 @@ aside .text {
 }
 
 @media screen and (max-width: 600px) {
-  .main_nav .nav_content .nav_list {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-}
-
-@media (min-width: 567px) and (max-width: 599px) {
   .main_nav .nav_content .nav_list {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
@@ -398,12 +361,6 @@ aside .text {
 }
 
 @media screen and (max-width: 600px) {
-  .main_nav .nav_content .hover {
-    display: none;
-  }
-}
-
-@media (min-width: 567px) and (max-width: 599px) {
   .main_nav .nav_content .hover {
     display: none;
   }
@@ -495,14 +452,6 @@ main {
   }
 }
 
-@media (min-width: 567px) and (max-width: 599px) {
-  main {
-    float: left;
-    width: 100%;
-    margin-top: 100vh;
-  }
-}
-
 main section {
   width: 100%;
   height: 100vh;
@@ -556,15 +505,6 @@ main section#about .container3d {
   }
 }
 
-@media (min-width: 567px) and (max-width: 599px) {
-  main section#about .container3d {
-    width: 100%;
-    top: 20%;
-    height: calc(100vh - 20rem);
-    position: absolute;
-  }
-}
-
 main section#about .container3d .scene3d {
   width: 100%;
   height: 100%;
@@ -579,6 +519,7 @@ main section#about .container3d .scene3d .card {
   position: absolute;
   width: 80%;
   text-align: center;
+  border-radius: 2.5rem;
   top: 20%;
   padding: 4% 5%;
   background-color: #ce8054;
@@ -614,7 +555,7 @@ main section#skills {
 
 @media screen and (max-width: 600px) {
   main section#skills {
-    padding: 5rem 2%;
+    padding: 1rem 2%;
   }
 }
 
@@ -624,21 +565,9 @@ main section#skills {
   }
 }
 
-@media (min-width: 567px) and (max-width: 599px) {
-  main section#skills {
-    padding: 5rem 2%;
-  }
-}
-
-@media screen and (min-width: 567px) and (max-width: 599px) and (orientation: landscape) {
-  main section#skills {
-    overflow-y: scroll;
-  }
-}
-
 @media (min-width: 601px) and (max-width: 823px) {
   main section#skills {
-    padding: 5rem 2%;
+    padding: 3rem 2%;
   }
 }
 
@@ -909,13 +838,13 @@ main section#projects #proj_descr {
 
 @media (min-width: 601px) and (max-width: 823px) {
   main section#projects #proj_descr {
-    margin-top: 30vh;
+    margin-top: 35vh;
   }
 }
 
-@media (min-width: 601px) and (max-width: 823px) {
+@media screen and (max-width: 600px) {
   main section#projects #proj_descr {
-    margin-top: 30vh;
+    margin-top: 35vh;
   }
 }
 
@@ -976,21 +905,9 @@ main section#projects .nav_dots input[name=dot]:checked {
   background: rgba(245, 245, 245, 0.4);
 }
 
-@media (min-width: 567px) and (max-width: 599px) {
-  main section#contact {
-    padding: 5rem 3%;
-  }
-}
-
-@media screen and (min-width: 567px) and (max-width: 599px) and (orientation: landscape) {
-  main section#contact {
-    overflow-y: scroll;
-  }
-}
-
 @media screen and (max-width: 600px) {
   main section#contact {
-    padding: 5rem 3%;
+    padding: 1rem 3%;
   }
 }
 
@@ -1002,7 +919,7 @@ main section#projects .nav_dots input[name=dot]:checked {
 
 @media (min-width: 601px) and (max-width: 823px) {
   main section#contact {
-    padding: 5rem 3%;
+    padding: 3rem 3%;
   }
 }
 
