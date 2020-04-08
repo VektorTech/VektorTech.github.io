@@ -74,74 +74,30 @@ const init = () => {
 
     /** Tiles */
     {
-        const canvas = document.getElementById('tiles');
-        // const canvasWidth = canvas.offsetWidth;
-        // const tileScaleX = canvasWidth / 7; 
-        // const tileScaleY = tileScaleX; 
-
-        // const tileSizeX = 7;
-        // const tileSizeY = 5;
-        
-        // const tileMap = [...Array(tileSizeY)].map(() => [...Array(tileSizeX)]);
-
-        // const props = {};
-        
-        ['html5', 'css', 'sass', 'bem', 'javascript', 'nodejs', 'react', 
-        'nextjs', 'redux', 'express', 'webpack', 'npm',
-        'java', 'python', 'sql', 'sequelize', 'mongodb', 'selenium', 
-        'jwt', 'passport', 'git', 'vs-code', 'photoshop',
-        ].map( (name, i) => {
-            const prop = document.createElement('div');
-            prop.id = name;
-            prop.style.background = `url(/assets/icons/${name}) no-repeat center`;
-            prop.style.backgroundSize = `contain`;
-
-            // let randX = ~~(Math.random() * tileSizeX);
-            // let randY = ~~(Math.random() * tileSizeY);
-
-            // while( tileMap[randY][randX] ){
-            //     randX = ~~(Math.random() * tileSizeX);
-            //     randY = ~~(Math.random() * tileSizeY);
-            // }
-
-            // const ico = new Image();
-            // ico.src = "/icons/"+name;
-            // prop.appendChild(ico);
-
-            const title = document.createElement('p');
-            title.innerText = name.toUpperCase();
-            prop.appendChild(title);
-
-            // tileMap[randY][randX] = prop;
-
-            // return props[name] = prop;
-            canvas.appendChild(prop);
+        const tiles = document.getElementById('tiles');   
+        fetch('/icons.json').then(data => data.json()).then((obj) => {
+            obj.data.map( (item, i) => {
+                const prop = document.createElement('div');
+                prop.id = item[0];
+                prop.style.background = `url(${item[1]}) no-repeat center`;
+                prop.style.backgroundSize = 'contain';
+    
+                const title = document.createElement('p');
+                title.innerText = item[0].toUpperCase();
+                prop.appendChild(title);
+    
+                tiles.appendChild(prop);
+            });
+    
+            const observer = new IntersectionObserver((entries) => {
+                if(entries[0].isIntersecting){
+                    const target = entries[0].target;
+                    [...target.children].map(elem => elem.className = 'trigger');
+                    observer.unobserve(target);
+                }
+            }, { root: null, rootMargin: '0px', threshold: .9 });
+            observer.observe(tiles);
         });
-
-    //     let offset = 0;
-
-    //     tileMap.forEach((row, y)  =>
-    //         row.forEach((item, x) => {
-    //             if(item){
-    //                 item.style.width = tileScaleX + "px";
-    //                 item.style.height = tileScaleY + "px";
-
-    //                 item.style.left = (x * tileScaleX) + "px";
-    //                 item.style.top = (y * tileScaleY ) - ( offset * tileScaleY ) + "px";
-    //                 offset++;
-                    
-    //                 canvas.appendChild(item);
-    //             }
-    //         }));
-
-        const observer = new IntersectionObserver((entries) => {
-            if(entries[0].isIntersecting){
-                const target = entries[0].target;
-                [...target.children].map(elem => elem.className = 'trigger');
-                observer.unobserve(target);
-            }
-        }, { root: null, rootMargin: '0px', threshold: 1 });
-        observer.observe(canvas);
     }
 
     /** SlideShow for projects */
