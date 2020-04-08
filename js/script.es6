@@ -75,8 +75,8 @@ const init = () => {
 
     /** Tiles */
     {
-        const tiles = document.getElementById('tiles');   
-        skill_icons.data.map( (item, i) => {
+        const tiles = document.getElementById('tiles');
+        skill_icons.map( (item, i) => {
             const prop = document.createElement('div');
             prop.id = item[0];
             prop.style.background = `url(${item[1]}) no-repeat center`;
