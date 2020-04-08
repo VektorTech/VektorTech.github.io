@@ -674,9 +674,11 @@ main {
                 position: absolute;
                 width: fit-content;
                 align-self: center;
+                visibility: hidden;
                 bottom: 10%;
                 
                 & .dot {
+                    visibility: visible;
                     margin: 0 .5rem;
                     opacity: .5;
 
