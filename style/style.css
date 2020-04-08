@@ -614,7 +614,7 @@ main section#skills {
 
 @media screen and (max-width: 600px) {
   main section#skills {
-    padding: 7rem 2%;
+    padding: 5rem 2%;
   }
 }
 
@@ -626,7 +626,7 @@ main section#skills {
 
 @media (min-width: 567px) and (max-width: 599px) {
   main section#skills {
-    padding: 7rem 2%;
+    padding: 5rem 2%;
   }
 }
 
@@ -638,7 +638,7 @@ main section#skills {
 
 @media (min-width: 601px) and (max-width: 823px) {
   main section#skills {
-    padding: 7rem 2%;
+    padding: 5rem 2%;
   }
 }
 
@@ -974,15 +974,33 @@ main section#projects .nav_dots input[name=dot]:checked {
   background: rgba(245, 245, 245, 0.4);
 }
 
+@media (min-width: 567px) and (max-width: 599px) {
+  main section#contact {
+    padding: 5rem 3%;
+  }
+}
+
 @media screen and (min-width: 567px) and (max-width: 599px) and (orientation: landscape) {
   main section#contact {
     overflow-y: scroll;
   }
 }
 
+@media screen and (max-width: 600px) {
+  main section#contact {
+    padding: 5rem 3%;
+  }
+}
+
 @media screen and (max-width: 600px) and (orientation: landscape) {
   main section#contact {
     overflow-y: scroll;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 823px) {
+  main section#contact {
+    padding: 5rem 3%;
   }
 }
 

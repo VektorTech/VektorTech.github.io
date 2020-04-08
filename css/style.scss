@@ -523,22 +523,21 @@ main {
             text-align: center;
 
             @include Small {
-                padding: 7rem 2%;
-
+                padding: 5rem 2%;
                 @include Landscape {
                     overflow-y: scroll;
                 }
             }
 
             @include Smaller {
-                padding: 7rem 2%;
+                padding: 5rem 2%;
                 @include Landscape {
                     overflow-y: scroll;
                 }
             }
 
             @include Mobile {
-                padding: 7rem 2%;
+                padding: 5rem 2%;
                 @include Landscape {
                     overflow-y: scroll;
                 }
@@ -700,18 +699,21 @@ main {
         
         &#contact {
             @include Smaller {
+                padding: 5rem 3%;
                 @include Landscape {
                     overflow-y: scroll;
                 }
             }
 
             @include Small {
+                padding: 5rem 3%;
                 @include Landscape {
                     overflow-y: scroll;
                 }
             }
 
             @include Mobile {
+                padding: 5rem 3%;
                 @include Landscape {
                     overflow-y: scroll;
                 }
