@@ -10,7 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/fontawesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/solid.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/brands.min.css" rel="stylesheet">
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>fetch('/icons.json').then(data => data.json()).then((obj) => window.skill_icons = obj);</script>
 
     <!-- <meta property="og:type" content="website">
     <meta property="og:url" content="https://example.com/page.html">
@@ -28,7 +28,7 @@
     <meta name="twitter:description" content="Content description less than 200 characters">
     <meta name="twitter:image" content="https://example.com/image.jpg"> -->
     
-    <!-- <link rel="icon" type="image/png" href="https://example.com/favicon.png"> -->
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="style/style.css">
     <title>Front-End React Web Developer | Kenny Sutherland</title>
 </head>

@@ -33,6 +33,12 @@ $default_time: .5s;
     }
 }
 
+@mixin Landscape {
+    @media screen and (orientation: landscape) {
+        @content;
+    }
+}
+
 /** Reset **/
 * {
     font-family: 'Inria Sans', sans-serif;
@@ -212,14 +218,14 @@ aside {
             background-color: $aside_font_color;
             color: $bg-color;
             border-radius: 50%;
-            margin-right: 1rem;
             padding-top: .5rem;
             text-align: center;
         }
 
         & a {
-            transition: $default_time;
             display: inline-block;
+            margin: 0 .5rem;
+            transition: $default_time;
 
             &:hover, &:focus {
                 transform: scale(1.2);
@@ -518,17 +524,24 @@ main {
 
             @include Small {
                 padding: 7rem 2%;
-                overflow-y: auto;
+
+                @include Landscape {
+                    overflow-y: scroll;
+                }
             }
 
             @include Smaller {
                 padding: 7rem 2%;
-                overflow-y: auto;
+                @include Landscape {
+                    overflow-y: scroll;
+                }
             }
 
             @include Mobile {
                 padding: 7rem 2%;
-                overflow-y: auto;
+                @include Landscape {
+                    overflow-y: scroll;
+                }
             }
 
             #tiles {
@@ -687,15 +700,21 @@ main {
         
         &#contact {
             @include Smaller {
-                overflow-y: auto;
+                @include Landscape {
+                    overflow-y: scroll;
+                }
             }
 
             @include Small {
-                overflow-y: auto;
+                @include Landscape {
+                    overflow-y: scroll;
+                }
             }
 
             @include Mobile {
-                overflow-y: auto;
+                @include Landscape {
+                    overflow-y: scroll;
+                }
             }
 
             label{

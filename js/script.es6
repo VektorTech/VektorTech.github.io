@@ -1,4 +1,4 @@
-const init = async () => {
+const init = () => {
     "use strict";
     document.body.style.visibility = 'visible';
     
@@ -76,29 +76,27 @@ const init = async () => {
     /** Tiles */
     {
         const tiles = document.getElementById('tiles');   
-        await fetch('/icons.json').then(data => data.json()).then((obj) => {
-            obj.data.map( (item, i) => {
-                const prop = document.createElement('div');
-                prop.id = item[0];
-                prop.style.background = `url(${item[1]}) no-repeat center`;
-                prop.style.backgroundSize = 'contain';
-    
-                const title = document.createElement('p');
-                title.innerText = item[0].toUpperCase();
-                prop.appendChild(title);
-    
-                tiles.appendChild(prop);
-            });
-    
-            const observer = new IntersectionObserver((entries) => {
-                if(entries[0].isIntersecting){
-                    const target = entries[0].target;
-                    [...target.children].map(elem => elem.className = 'trigger');
-                    observer.unobserve(target);
-                }
-            }, { root: null, rootMargin: '0px', threshold: .9 });
-            observer.observe(tiles);
+        skill_icons.data.map( (item, i) => {
+            const prop = document.createElement('div');
+            prop.id = item[0];
+            prop.style.background = `url(${item[1]}) no-repeat center`;
+            prop.style.backgroundSize = 'contain';
+
+            const title = document.createElement('p');
+            title.innerText = item[0].toUpperCase();
+            prop.appendChild(title);
+
+            tiles.appendChild(prop);
         });
+
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting){
+                const target = entries[0].target;
+                [...target.children].map(elem => elem.className = 'trigger');
+                observer.unobserve(target);
+            }
+        }, { root: null, rootMargin: '0px', threshold: .9 });
+        observer.observe(tiles);
     }
 
     /** SlideShow for projects */

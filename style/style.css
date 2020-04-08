@@ -218,15 +218,15 @@ aside .social_links div {
   background-color: #ce8054;
   color: #233342;
   border-radius: 50%;
-  margin-right: 1rem;
   padding-top: .5rem;
   text-align: center;
 }
 
 aside .social_links a {
+  display: inline-block;
+  margin: 0 .5rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  display: inline-block;
 }
 
 aside .social_links a:hover, aside .social_links a:focus {
@@ -615,21 +615,36 @@ main section#skills {
 @media screen and (max-width: 600px) {
   main section#skills {
     padding: 7rem 2%;
-    overflow-y: auto;
+  }
+}
+
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  main section#skills {
+    overflow-y: scroll;
   }
 }
 
 @media (min-width: 567px) and (max-width: 599px) {
   main section#skills {
     padding: 7rem 2%;
-    overflow-y: auto;
+  }
+}
+
+@media screen and (min-width: 567px) and (max-width: 599px) and (orientation: landscape) {
+  main section#skills {
+    overflow-y: scroll;
   }
 }
 
 @media (min-width: 601px) and (max-width: 823px) {
   main section#skills {
     padding: 7rem 2%;
-    overflow-y: auto;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 823px) and (orientation: landscape) {
+  main section#skills {
+    overflow-y: scroll;
   }
 }
 
@@ -959,21 +974,21 @@ main section#projects .nav_dots input[name=dot]:checked {
   background: rgba(245, 245, 245, 0.4);
 }
 
-@media (min-width: 567px) and (max-width: 599px) {
+@media screen and (min-width: 567px) and (max-width: 599px) and (orientation: landscape) {
   main section#contact {
-    overflow-y: auto;
+    overflow-y: scroll;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) and (orientation: landscape) {
   main section#contact {
-    overflow-y: auto;
+    overflow-y: scroll;
   }
 }
 
-@media (min-width: 601px) and (max-width: 823px) {
+@media screen and (min-width: 601px) and (max-width: 823px) and (orientation: landscape) {
   main section#contact {
-    overflow-y: auto;
+    overflow-y: scroll;
   }
 }
 
