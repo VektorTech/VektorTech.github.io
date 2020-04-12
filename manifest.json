@@ -1,0 +1,16 @@
+{
+    "name": "Front-End React Web Developer | Kenny Sutherland :: Portfolio",
+    "short_name" : "Front End Portfolio",
+    "start_url": "index.html",
+    "scope" : "./",
+    "icons": [
+        {
+            "src": "./favicon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ce8054",
+    "background_color": "#233342",
+    "display": "standalone"
+}

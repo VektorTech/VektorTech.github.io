@@ -35,7 +35,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/brands.min.css" rel="stylesheet">
 
     <title>Front-End React Web Developer | Kenny Sutherland :: Portfolio</title>
-
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) { 
+            navigator.serviceWorker.register('/service-worker.js'); 
+        }
+    </script> 
+    
     <link rel="prefetch" href="js/icons.js">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="style/style.css">
