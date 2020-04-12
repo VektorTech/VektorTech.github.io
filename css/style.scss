@@ -4,9 +4,9 @@ $bg-color: #233342;//#452b4d;
 $aside_font_color: #ce8054;//rgb(255, 224, 123);
 $button_bg: #6f3637;
 $menu_bg: #4b2b31;
-$main_bg: #f5f5f5;
+$main_bg: #fff;
 
-$aside_line_space: 5vh;
+$aside_line_space: 7vh;
 $default_time: .5s;
 
 @mixin Tablet {
@@ -39,6 +39,8 @@ $default_time: .5s;
     font-display: swap;
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style: none;
     box-sizing: border-box;
     outline: none;
 }
@@ -50,16 +52,8 @@ html {
 }
 
 body {
-    display: none;
     background-color: $bg-color;
-}
-
-a {
-    text-decoration: none;
-}
-
-ul {
-    list-style-type: none;
+    visibility: hidden;
 }
 
 canvas {
@@ -94,11 +88,94 @@ canvas {
     color: red;
 }
 
-.spinner {
-    background-color: pink;
-    width: 20rem;
-    height: 20rem;
+.light_text {
+    color: #ddd;
+}
+
+.loaded {
+    visibility: visible;
+}
+
+.spinner-wrapper {
+    background-color: $bg-color;
     position: fixed;
+    visibility: visible;
+    left: 0; top: 0;
+    width:100vw; height:100vh;
+    z-index: 100000;
+    padding-left: calc(50% - 4rem);
+    padding-top: calc(50vh - 4rem);
+    
+/** https://loading.io/css/ **/
+    & {
+      .lds-grid {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-grid div {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: $aside_font_color;
+        animation: lds-grid 1.2s linear infinite;
+      }
+      .lds-grid div:nth-child(1) {
+        top: 8px;
+        left: 8px;
+        animation-delay: 0s;
+      }
+      .lds-grid div:nth-child(2) {
+        top: 8px;
+        left: 32px;
+        animation-delay: -0.4s;
+      }
+      .lds-grid div:nth-child(3) {
+        top: 8px;
+        left: 56px;
+        animation-delay: -0.8s;
+      }
+      .lds-grid div:nth-child(4) {
+        top: 32px;
+        left: 8px;
+        animation-delay: -0.4s;
+      }
+      .lds-grid div:nth-child(5) {
+        top: 32px;
+        left: 32px;
+        animation-delay: -0.8s;
+      }
+      .lds-grid div:nth-child(6) {
+        top: 32px;
+        left: 56px;
+        animation-delay: -1.2s;
+      }
+      .lds-grid div:nth-child(7) {
+        top: 56px;
+        left: 8px;
+        animation-delay: -0.8s;
+      }
+      .lds-grid div:nth-child(8) {
+        top: 56px;
+        left: 32px;
+        animation-delay: -1.2s;
+      }
+      .lds-grid div:nth-child(9) {
+        top: 56px;
+        left: 56px;
+        animation-delay: -1.6s;
+      }
+      @keyframes lds-grid {
+        0%, 100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      } 
+    }     
 }
 
 /** Right Aside Elements **/
@@ -195,25 +272,26 @@ aside {
             float: right;
         }
 
-        & div {
+        & ul li {
             display: inline-block;
             width: 4rem;
             height: 4rem;
             background-color: $aside_font_color;
-            color: $bg-color;
             border-radius: 50%;
             padding-top: .5rem;
+            margin-right: .5rem;
             text-align: center;
-        }
-
-        & a {
-            display: inline-block;
-            margin: 0 .5rem;
             transition: $default_time;
 
             &:hover, &:focus {
                 transform: scale(1.2);
             }
+        }
+
+        & a {
+            display: inline-block;
+            margin: 0 .5rem;
+            color: $bg-color;
         }
     }
     
@@ -455,19 +533,18 @@ main {
                     .card {
                         position: absolute;
                         width: 80%;
-                        text-align: center;
                         border-radius: 2.5rem;
                         top: 20%;
                         padding: 4% 5%;
                         background-color: $aside_font_color;
 
                         &:first-of-type {
-                            transform: translate3d(0,0,-60px);                       
+                            transform: translate3d(0,0,-100px);                       
                         }
 
                         @for $i from 2 through 4 {
                             &:nth-of-type(#{$i}) {
-                                transform: translate3d(0,0,#{$i * -180}px);                       
+                                transform: translate3d(0,0,#{$i * -200}px);                       
                             }
                         }
                     }
@@ -484,13 +561,16 @@ main {
 
             @include Small {
                 padding: 1rem 2%;
+                padding-top: 10%;
                 @include Landscape {
                     overflow-y: scroll;
                 }
+
             }
 
             @include Mobile {
                 padding: 3rem 2%;
+                padding-top: 10%;
                 @include Landscape {
                     overflow-y: scroll;
                 }
@@ -507,12 +587,16 @@ main {
                     font-size: 1.1rem;
                     width: 5.2rem;
                     height: 10%;
-                    margin: 4% 3%;
+                    margin: 3%;
                     transition: $default_time ease-out;
                     
                     &:hover{
                         z-index: 10;
                         transform: scale(1.4);
+
+                        p {
+                            opacity: 1;
+                        }
                     }
 
                     &.trigger {
@@ -539,8 +623,11 @@ main {
                     }
 
                     & p {
-                        margin-top: 90%;
+                        opacity: 0;
+                        margin-top: 25%;
                         background: $main_bg;
+                        transition: $default_time;
+                        user-select: none;
                     }
 
                 }
@@ -557,16 +644,13 @@ main {
                 height: 100%;
                 top: 0;
                 left: 0;
+                opacity: 0;
                 z-index: -1;
+                transition: $default_time;
 
                 &.active {
                     z-index: 0;
-                    // animation: clipShow .7s ease-out 1 forwards;
-                }
-
-                @keyframes clipShow {
-                    0% { clip-path: circle(0%); }
-                    100% { clip-path: circle(100%); }
+                    opacity: 1;
                 }
             }
 
@@ -586,7 +670,7 @@ main {
             }
 
             #proj_descr {
-                margin-top: 55vh;
+                margin-top: 40vh;
                 padding: 1rem 10%;
                 text-align: center;
                 color: #eee !important;
@@ -655,6 +739,7 @@ main {
         &#contact {
             @include Small {
                 padding: 1rem 3%;
+                padding-top: 10%;
                 @include Landscape {
                     overflow-y: scroll;
                 }
@@ -662,6 +747,7 @@ main {
 
             @include Mobile {
                 padding: 3rem 3%;
+                padding-top: 10%;
                 @include Landscape {
                     overflow-y: scroll;
                 }

@@ -1,8 +1,10 @@
 const init = () => {
     "use strict";
-    document.getElementsByClassName('spinner')[0].style.display = 'none';
-    document.body.style.display = 'block';
-    
+
+    /*FOUC fix and hide loader*/
+    document.body.className = 'loaded';
+    document.getElementsByClassName('spinner-wrapper')[0].style.display = 'none';
+
     /** Contact Button */
     {
         document.body.onscroll = e => {
@@ -104,32 +106,42 @@ const init = () => {
     {
         const _projects = [
             { 
-                title: "Project 1", 
-                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam natus libero vitae quam aperiam veniam error, nisi consectetur similique possimus itaque ad id quas. Molestiae sit eum ducimus sunt? Facere!",
-                img: "image_1.png",
-                code: "https://github.com",
-                url: "https://example.com"
+                title: "this.myPortfolio", 
+                text: `Tech: HTML5, CSS3, Sass, JavaScript<br>
+                Description: A developer portfolio for marketing my skills, hosted on Github Pages.<br>
+                Features: CSS 3D and Animation, JS Canvas, HTML Form validation
+                `,
+                img: "#",
+                code: "https://github.com/VektorTech/VektorTech.github.io",
+                url: "/"
             },
             { 
-                title: "Project 2", 
-                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam natus libero vitae quam aperiam veniam error, nisi consectetur similique possimus itaque ad id quas. Molestiae sit eum ducimus sunt? Facere!",
-                img: "image_2.png",
-                code: "https://github.com",
-                url: "https://example.com"
+                title: "Design Dashboard", 
+                text: `Tech: HTML5, Sass, BEM, Webpack<br>
+                Description: Created a dashboard UI from a design.`,
+                img: "#",
+                code: "https://github.com/VektorTech/product-design-dashboard",
+                url: "/"
             },
             { 
-                title: "Project 3", 
-                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam natus libero vitae quam aperiam veniam error, nisi consectetur similique possimus itaque ad id quas. Molestiae sit eum ducimus sunt? Facere!",
-                img: "image_3.png",
-                code: "https://github.com",
-                url: "https://example.com"
+                title: "Job Haven - WIP", 
+                text: `Tech: HTML5, CSS3, React, NextJS, Sequelize<br>
+                Description: A server side rendered job postings website.<br>
+                Specifications: Uses Local Storage temporarily storing data, REST Node js API, Styled Components<br>
+                Features: Uses JWT Auth`,
+                img: "#",
+                code: "https://github.com/VektorTech/job-board",
+                url: "/"
             },
             { 
-                title: "Project 4", 
-                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam natus libero vitae quam aperiam veniam error, nisi consectetur similique possimus itaque ad id quas. Molestiae sit eum ducimus sunt? Facere!",
-                img: "image_4.png",
-                code: "https://github.com",
-                url: "https://example.com"
+                title: "Gimmi Burga - WIP", 
+                text: `Tech: HTML5, CSS3, React[router, hooks], Redux[sagas], Mongoose<br>
+                Description: A fast food delivery app.<br>
+                Specifications: Uses redux-persist for persisting data on the front end and reselect to memoize redux selectors,<br>
+                CORS enabled, Express API, Passport JS for Authentication`,
+                img: "#",
+                code: "https://github.com/VektorTech/gimmi-burga",
+                url: "/"
             }
         ];
         const proj_len = _projects.length;
@@ -163,7 +175,7 @@ const init = () => {
             proj_code.innerText = "Github Code";
             proj_code.href = item.code;
             proj_code.target = "_blank";
-            proj_text.innerText = item.text;
+            proj_text.innerHTML = item.text;
 
             link.appendChild(proj_bg);
 
@@ -236,14 +248,14 @@ const init = () => {
         resizeCanvas();
 
         const ctx = canvas.getContext('2d');
-        const STAR_COUNT = 30;
+        const STAR_COUNT = 40;
 
         class Star {
             constructor(){
                 this.recalculate();
                 this.radius = ~~(Math.random() * (2 - 1 + 1)) + 1; // random() * (max - min + 1) + min = [min...max];
                 this.yIncrease = 0;
-                this.ySpeed = 1 - 2 * this.radius / 5 // Bigger ones should go slower
+                this.ySpeed = 1 - 2 * this.radius / 7 // Bigger ones should go slower
             }
 
             rise() {

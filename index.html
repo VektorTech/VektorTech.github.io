@@ -1,40 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163424796-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-163424796-1');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover">
-    <meta name="description" content=""> <!--150 characters-->
+    <meta name="description" content="Front-End Web Development (HTML, CSS, JS and React) and Automation (Python and Node)">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="vektortech.github.io">
+    <meta property="og:title" content="Front End React Web Developer">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:description" content="Front-End Web Development (HTML, CSS, JS and React) and Automation (Python and Node)">
+    <meta property="og:site_name" content="Kenny Sutherland Developer Portfolio">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:url" content="vektortech.github.io">
+    <meta name="twitter:title" content="Front End React Web Developer">
+    <meta name="twitter:description" content="Front-End Web Development(HTML, CSS, JS and React) and Automation(Python and Node)">
+    <meta name="twitter:image" content="/favicon.png">
 
     <!-- Vendor -->
     <link href="https://fonts.googleapis.com/css?family=Inria+Sans&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/fontawesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/solid.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/brands.min.css" rel="stylesheet">
-    <script src="js/icons.js"></script>
-    
-    <!-- <meta property="og:type" content="website">
-    <meta property="og:url" content="https://example.com/page.html">
-    <meta property="og:title" content="Content Title">
-    <meta property="og:image" content="https://example.com/image.jpg">
-    <meta property="og:description" content="Description Here">
-    <meta property="og:site_name" content="Site Name">
-    <meta property="og:locale" content="en_US">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@site_account">
-    <meta name="twitter:creator" content="@individual_account">
-    <meta name="twitter:url" content="https://example.com/page.html">
-    <meta name="twitter:title" content="Content Title">
-    <meta name="twitter:description" content="Content description less than 200 characters">
-    <meta name="twitter:image" content="https://example.com/image.jpg"> -->
-    
+    <title>Front-End React Web Developer | Kenny Sutherland :: Portfolio</title>
+
+    <link rel="prefetch" href="js/icons.js">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="style/style.css">
-    <title>Front-End React Web Developer | Kenny Sutherland</title>
+
+    <script src="js/icons.js"></script>
 </head>
 
 <body>
     <noscript>Please enable JavaScript to proceed.</noscript>
+    <!-- Loader -->
+    <div class="spinner-wrapper">
+        <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
     <canvas></canvas>
     <nav class='main_nav'>
         <button class="burger" id="menu_btn" tabindex="1">
@@ -53,16 +67,18 @@
     </nav>
 
     <aside id="cover">
-        <h1 class="title">Front-End <br> Web Developer</h1>
-        <h2 class='descr'>Hello, I'm Kenny Sutherland and I enjoy the process of creating amazing user experiences.</h2>
+        <h1 class="title">Front-End Developer</h1>
+        <h2 class='descr'>Hello, I'm <span class='light_text'>Kenny Sutherland</span> and I enjoy the process of creating amazing user experiences.</h2>
         <button id='contact_btn' onclick="location.href='/#contact'" tabindex="7">Hire me!</button>
         <div class="social_links">
-            <a target="_blank" tabindex="8" href="https://github.com/VektorTech">
-                <div class="github"><i class="fab fa-github fa-3x"></i></div>
-            </a>
-            <a target="_blank" tabindex="8" href="mailto:kenny.sutherland@protonmail.com">
-                <div class="mail"><i class="fas fa-envelope fa-3x"></i></div>
-            </a>
+            <ul>
+                <li><a target="_blank" tabindex="8" href="https://github.com/VektorTech">
+                    <i class="fab fa-github fa-3x"></i>
+                </a></li>
+                <li><a target="_blank" tabindex="8" href="mailto:kennysutherland@protonmail.com">
+                    <i class="fas fa-envelope fa-3x"></i>
+                </a></li>
+            </ul>
         </div>
         <p class='text'>Made with Vanilla.</p>
         <p class='text'>Kenny Sutherland &copy; 2020</p>
@@ -73,30 +89,26 @@
             <div class="container3d">
             <div class="scene3d">
                 <div class="card">
-                    <h2 class='sub_head'>first</h2>
+                    <h2 class='sub_head'>About</h2>
                     <p class='sub_text'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, reiciendis! Accusamus obcaecati ipsam expedita ratione commodi assumenda consequatur iure corrupti cupiditate itaque, dignissimos quo fugiat, nesciunt veniam blanditiis unde sunt!
+                        Age: 23<br>
+                        Gender: Male<br>
+                        Height: 6'<br>
+                        Location: Jamaica<br>
+                    </p> 
+                </div>
+                
+                <div class="card">     
+                    <p class='sub_text'>
+                        I am currently pursuing a degree in Computer Science at the University of the West Indies.<br><br>
+                        Always learning and improving my skills as I have a passion for creativity.
                     </p> 
                 </div>
                 
                 <div class="card">
-                    <h2 class='sub_head'>second</h2>       
                     <p class='sub_text'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, reiciendis! Accusamus obcaecati ipsam expedita ratione commodi assumenda consequatur iure corrupti cupiditate itaque, dignissimos quo fugiat, nesciunt veniam blanditiis unde sunt!
-                    </p> 
-                </div>
-                
-                <div class="card">
-                    <h2 class='sub_head'>third</h2>
-                    <p class='sub_text'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, reiciendis! Accusamus obcaecati ipsam expedita ratione commodi assumenda consequatur iure corrupti cupiditate itaque, dignissimos quo fugiat, nesciunt veniam blanditiis unde sunt!
-                    </p> 
-                </div>
-
-                <div class="card">
-                    <h2 class='sub_head'>fourth</h2>
-                    <p class='sub_text'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, reiciendis! Accusamus obcaecati ipsam expedita ratione commodi assumenda consequatur iure corrupti cupiditate itaque, dignissimos quo fugiat, nesciunt veniam blanditiis unde sunt!
+                        I have expertise in responsive web design and SEO friendly landing pages.<br><br>
+                        I also specialize in web scraping and automation.
                     </p> 
                 </div>
             </div>
@@ -105,7 +117,7 @@
 
         <section id="skills">
             <h2 class='heading'>Technical Skills</h2>
-            <p class='sub_text'>A versatile array of skills enabling me to work on both front and back end.</p>
+            <p class='sub_text'>A versatile array of skills enabling me to work on both the front and back end. The following doesn't represent my skillset in it's entirety:</p>
             <div id="tiles"></div>
         </section>
 
@@ -116,7 +128,6 @@
 
             <div class="nav_dots"></div>
         </section>
-
         <section id="contact">
             <h2 class='heading'>Contact Me</h2>
             <form action="https://getsimpleform.com/messages?form_api_token=525c8fcb359f8c5fd8bdbb13473622c0" method="POST">
@@ -140,8 +151,6 @@
 
     <script async src="js/script.es6"></script>
 </body>
-<!-- Loader -->
-<div class="spinner"></div>
 </html>
 
 <!-- 404 page create -->

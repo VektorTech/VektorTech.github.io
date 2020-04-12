@@ -4,6 +4,8 @@
   font-display: swap;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  list-style: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
@@ -16,16 +18,8 @@ html {
 }
 
 body {
-  display: none;
   background-color: #233342;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style-type: none;
+  visibility: hidden;
 }
 
 canvas {
@@ -60,11 +54,124 @@ canvas {
   color: red;
 }
 
-.spinner {
-  background-color: pink;
-  width: 20rem;
-  height: 20rem;
+.light_text {
+  color: #ddd;
+}
+
+.loaded {
+  visibility: visible;
+}
+
+.spinner-wrapper {
+  background-color: #233342;
   position: fixed;
+  visibility: visible;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100000;
+  padding-left: calc(50% - 4rem);
+  padding-top: calc(50vh - 4rem);
+  /** https://loading.io/css/ **/
+}
+
+.spinner-wrapper .lds-grid {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.spinner-wrapper .lds-grid div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ce8054;
+  -webkit-animation: lds-grid 1.2s linear infinite;
+          animation: lds-grid 1.2s linear infinite;
+}
+
+.spinner-wrapper .lds-grid div:nth-child(1) {
+  top: 8px;
+  left: 8px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.spinner-wrapper .lds-grid div:nth-child(2) {
+  top: 8px;
+  left: 32px;
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+
+.spinner-wrapper .lds-grid div:nth-child(3) {
+  top: 8px;
+  left: 56px;
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+
+.spinner-wrapper .lds-grid div:nth-child(4) {
+  top: 32px;
+  left: 8px;
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+
+.spinner-wrapper .lds-grid div:nth-child(5) {
+  top: 32px;
+  left: 32px;
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+
+.spinner-wrapper .lds-grid div:nth-child(6) {
+  top: 32px;
+  left: 56px;
+  -webkit-animation-delay: -1.2s;
+          animation-delay: -1.2s;
+}
+
+.spinner-wrapper .lds-grid div:nth-child(7) {
+  top: 56px;
+  left: 8px;
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+
+.spinner-wrapper .lds-grid div:nth-child(8) {
+  top: 56px;
+  left: 32px;
+  -webkit-animation-delay: -1.2s;
+          animation-delay: -1.2s;
+}
+
+.spinner-wrapper .lds-grid div:nth-child(9) {
+  top: 56px;
+  left: 56px;
+  -webkit-animation-delay: -1.6s;
+          animation-delay: -1.6s;
+}
+
+@-webkit-keyframes lds-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes lds-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /** Right Aside Elements **/
@@ -119,7 +226,7 @@ aside {
 
 aside .title {
   font-size: 5rem;
-  margin-bottom: 5vh;
+  margin-bottom: 7vh;
   -webkit-animation: intro 1.5s cubic-bezier(0.55, 1.35, 1, -0.55) 1 forwards;
           animation: intro 1.5s cubic-bezier(0.55, 1.35, 1, -0.55) 1 forwards;
 }
@@ -148,7 +255,7 @@ aside .title {
 
 aside .descr {
   font-size: 1.8rem;
-  margin-bottom: 5vh;
+  margin-bottom: 7vh;
   -webkit-animation: intro 1.5s cubic-bezier(0.55, 1.35, 1, -0.55) 1 forwards;
           animation: intro 1.5s cubic-bezier(0.55, 1.35, 1, -0.55) 1 forwards;
 }
@@ -165,7 +272,7 @@ aside #contact_btn {
   border: 0.2rem solid #ce8054;
   -webkit-box-shadow: inset -18rem 0 0 #233342;
           box-shadow: inset -18rem 0 0 #233342;
-  margin-bottom: 5vh;
+  margin-bottom: 7vh;
   -webkit-animation: intro 1.5s cubic-bezier(0.55, 1.35, 1, -0.55) 1 forwards;
           animation: intro 1.5s cubic-bezier(0.55, 1.35, 1, -0.55) 1 forwards;
   -webkit-transition: -webkit-box-shadow .2s linear;
@@ -181,7 +288,7 @@ aside #contact_btn:hover, aside #contact_btn:focus {
 
 aside .social_links {
   height: 5rem;
-  margin-bottom: 5vh;
+  margin-bottom: 7vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -195,31 +302,32 @@ aside .social_links {
   }
 }
 
-aside .social_links div {
+aside .social_links ul li {
   display: inline-block;
   width: 4rem;
   height: 4rem;
   background-color: #ce8054;
-  color: #233342;
   border-radius: 50%;
   padding-top: .5rem;
+  margin-right: .5rem;
   text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+aside .social_links ul li:hover, aside .social_links ul li:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 aside .social_links a {
   display: inline-block;
   margin: 0 .5rem;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-aside .social_links a:hover, aside .social_links a:focus {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  color: #233342;
 }
 
 aside .text {
-  color: #f5f5f5;
+  color: #fff;
   font-size: 1.3rem;
   -webkit-animation: intro 1.5s cubic-bezier(0.55, 1.35, 1, -0.55) 1 forwards;
           animation: intro 1.5s cubic-bezier(0.55, 1.35, 1, -0.55) 1 forwards;
@@ -382,7 +490,7 @@ aside .text {
   /*click wont register when nav_content has opacity set to 0*/
   border-radius: 50%;
   border: none;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 
 .main_nav .burger:hover .bar, .main_nav .burger:hover .bar::before, .main_nav .burger:hover .bar::after, .main_nav .burger:focus .bar, .main_nav .burger:focus .bar::before, .main_nav .burger:focus .bar::after {
@@ -469,7 +577,7 @@ main section {
 }
 
 main section:nth-of-type(n+2) {
-  background: #f5f5f5;
+  background: #fff;
 }
 
 main section:nth-of-type(2n-1) {
@@ -525,7 +633,6 @@ main section#about .container3d .scene3d {
 main section#about .container3d .scene3d .card {
   position: absolute;
   width: 80%;
-  text-align: center;
   border-radius: 2.5rem;
   top: 20%;
   padding: 4% 5%;
@@ -533,23 +640,23 @@ main section#about .container3d .scene3d .card {
 }
 
 main section#about .container3d .scene3d .card:first-of-type {
-  -webkit-transform: translate3d(0, 0, -60px);
-          transform: translate3d(0, 0, -60px);
+  -webkit-transform: translate3d(0, 0, -100px);
+          transform: translate3d(0, 0, -100px);
 }
 
 main section#about .container3d .scene3d .card:nth-of-type(2) {
-  -webkit-transform: translate3d(0, 0, -360px);
-          transform: translate3d(0, 0, -360px);
+  -webkit-transform: translate3d(0, 0, -400px);
+          transform: translate3d(0, 0, -400px);
 }
 
 main section#about .container3d .scene3d .card:nth-of-type(3) {
-  -webkit-transform: translate3d(0, 0, -540px);
-          transform: translate3d(0, 0, -540px);
+  -webkit-transform: translate3d(0, 0, -600px);
+          transform: translate3d(0, 0, -600px);
 }
 
 main section#about .container3d .scene3d .card:nth-of-type(4) {
-  -webkit-transform: translate3d(0, 0, -720px);
-          transform: translate3d(0, 0, -720px);
+  -webkit-transform: translate3d(0, 0, -800px);
+          transform: translate3d(0, 0, -800px);
 }
 
 main section#about p {
@@ -563,6 +670,7 @@ main section#skills {
 @media screen and (max-width: 600px) {
   main section#skills {
     padding: 1rem 2%;
+    padding-top: 10%;
   }
 }
 
@@ -575,6 +683,7 @@ main section#skills {
 @media (min-width: 601px) and (max-width: 823px) {
   main section#skills {
     padding: 3rem 2%;
+    padding-top: 10%;
   }
 }
 
@@ -596,7 +705,7 @@ main section#skills #tiles > div {
   font-size: 1.1rem;
   width: 5.2rem;
   height: 10%;
-  margin: 4% 3%;
+  margin: 3%;
   -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
@@ -605,6 +714,10 @@ main section#skills #tiles > div:hover {
   z-index: 10;
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
+}
+
+main section#skills #tiles > div:hover p {
+  opacity: 1;
 }
 
 main section#skills #tiles > div.trigger:nth-of-type(1) {
@@ -776,8 +889,15 @@ main section#skills #tiles > div.trigger:nth-of-type(23) {
 }
 
 main section#skills #tiles > div p {
-  margin-top: 90%;
-  background: #f5f5f5;
+  opacity: 0;
+  margin-top: 25%;
+  background: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 main section#projects {
@@ -791,40 +911,22 @@ main section#projects #proj_bg {
   height: 100%;
   top: 0;
   left: 0;
+  opacity: 0;
   z-index: -1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 main section#projects #proj_bg.active {
   z-index: 0;
-}
-
-@-webkit-keyframes clipShow {
-  0% {
-    -webkit-clip-path: circle(0%);
-            clip-path: circle(0%);
-  }
-  100% {
-    -webkit-clip-path: circle(100%);
-            clip-path: circle(100%);
-  }
-}
-
-@keyframes clipShow {
-  0% {
-    -webkit-clip-path: circle(0%);
-            clip-path: circle(0%);
-  }
-  100% {
-    -webkit-clip-path: circle(100%);
-            clip-path: circle(100%);
-  }
+  opacity: 1;
 }
 
 main section#projects i.proj-arrow {
   margin-top: calc(40vh - 4rem);
   -webkit-transform: scale(4);
           transform: scale(4);
-  color: rgba(245, 245, 245, 0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 main section#projects i.proj-arrow:nth-of-type(1) {
@@ -837,7 +939,7 @@ main section#projects i.proj-arrow:nth-of-type(2) {
 }
 
 main section#projects #proj_descr {
-  margin-top: 55vh;
+  margin-top: 40vh;
   padding: 1rem 10%;
   text-align: center;
   color: #eee !important;
@@ -904,17 +1006,18 @@ main section#projects .nav_dots .dot::after {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 
 main section#projects .nav_dots input[name=dot]:checked {
   opacity: 1;
-  background: rgba(245, 245, 245, 0.4);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 @media screen and (max-width: 600px) {
   main section#contact {
     padding: 1rem 3%;
+    padding-top: 10%;
   }
 }
 
@@ -927,6 +1030,7 @@ main section#projects .nav_dots input[name=dot]:checked {
 @media (min-width: 601px) and (max-width: 823px) {
   main section#contact {
     padding: 3rem 3%;
+    padding-top: 10%;
   }
 }
 
@@ -966,7 +1070,7 @@ main section#contact input[type=submit] {
   font-weight: bold;
   border-radius: 5rem;
   color: #ce8054;
-  background-color: #f5f5f5;
+  background-color: #fff;
   border: 0.3rem solid #ce8054;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -974,7 +1078,7 @@ main section#contact input[type=submit] {
 
 main section#contact input[type=submit]:hover, main section#contact input[type=submit]:focus {
   background-color: #ce8054;
-  color: #f5f5f5;
+  color: #fff;
 }
 
 main section#contact textarea {
