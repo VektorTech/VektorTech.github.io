@@ -411,9 +411,8 @@ aside {
         border-radius: 50%;
         border: none;
         background-color: $main_bg;
-
+        
         &:hover, &:focus {
-            // filter: drop-shadow(0 0 .5rem rgba($button_bg, 0.5));
             .bar, .bar::before, .bar::after {
                 background-color: $aside_font_color;
             }

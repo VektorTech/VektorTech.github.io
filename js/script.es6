@@ -111,17 +111,19 @@ const init = () => {
                 Description: A developer portfolio for marketing my skills, hosted on Github Pages.<br>
                 Features: CSS 3D and Animation, JS Canvas, HTML Form validation
                 `,
-                img: "#",
+                img: "portfolio.jpg",
                 code: "https://github.com/VektorTech/VektorTech.github.io",
                 url: "/"
             },
             { 
-                title: "Design Dashboard", 
-                text: `Tech: HTML5, Sass, BEM, Webpack<br>
-                Description: Created a dashboard UI from a design.`,
-                img: "#",
-                code: "https://github.com/VektorTech/product-design-dashboard",
-                url: "/"
+                title: "Gimmi Burga - WIP", 
+                text: `Tech: HTML5, CSS3, React[router, hooks, Spring, helmet], Redux[sagas], Mongoose<br>
+                Description: A fast food delivery app.<br>
+                Specifications: Uses redux-persist for persisting data on the front end and reselect to memoize redux selectors,<br>
+                CORS enabled, Express API, Passport JS for Authentication`,
+                img: "burga.jpg",
+                code: "https://github.com/VektorTech/gimmi-burga",
+                url: "https://github.com/VektorTech/gimmi-burga"
             },
             { 
                 title: "Job Haven - WIP", 
@@ -129,19 +131,17 @@ const init = () => {
                 Description: A server side rendered job postings website.<br>
                 Specifications: Uses Local Storage temporarily storing data, REST Node js API, Styled Components<br>
                 Features: Uses JWT Auth`,
-                img: "#",
+                img: "jobboard.jpg",
                 code: "https://github.com/VektorTech/job-board",
-                url: "/"
+                url: "https://github.com/VektorTech/job-board"
             },
             { 
-                title: "Gimmi Burga - WIP", 
-                text: `Tech: HTML5, CSS3, React[router, hooks], Redux[sagas], Mongoose<br>
-                Description: A fast food delivery app.<br>
-                Specifications: Uses redux-persist for persisting data on the front end and reselect to memoize redux selectors,<br>
-                CORS enabled, Express API, Passport JS for Authentication`,
-                img: "#",
-                code: "https://github.com/VektorTech/gimmi-burga",
-                url: "/"
+                title: "Design Dashboard", 
+                text: `Tech: HTML5, Sass[flexbox, grids], BEM, Webpack<br>
+                Description: Created a dashboard UI from a design.`,
+                img: "dashboard.jpg",
+                code: "https://github.com/VektorTech/product-design-dashboard",
+                url: "https://github.com/VektorTech/product-design-dashboard"
             }
         ];
         const proj_len = _projects.length;
@@ -170,7 +170,7 @@ const init = () => {
             proj_bg.appendChild(proj_descr);
 
             proj_bg.style.background = `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0)), 
-                                        #233342 url(/assets/slides/${item.img}) no-repeat center 100%`;
+                                        #233342 url(/slides/${item.img}) no-repeat center 100%`;
             proj_title.innerText = item.title;
             proj_code.innerText = "Github Code";
             proj_code.href = item.code;

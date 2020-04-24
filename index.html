@@ -38,24 +38,31 @@
     <link rel="manifest" href="/manifest.json">
     <script>
         if ('serviceWorker' in navigator) { 
-            navigator.serviceWorker.register('/service-worker.js'); 
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => console.log('service worker registered'))
+                .catch(err => console.log('service worker not registered', err));
         }
     </script> 
     
     <link rel="prefetch" href="js/icons.js">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style.min.css">
 
     <script src="js/icons.js"></script>
 </head>
 
 <body>
     <noscript>Please enable JavaScript to proceed.</noscript>
+
     <!-- Loader -->
     <div class="spinner-wrapper">
         <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
+
+    <!-- Background Animation -->
     <canvas></canvas>
+
+    <!-- Header Navigation -->
     <nav class='main_nav'>
         <button class="burger" id="menu_btn" tabindex="1">
             <span class="bar"></span>
@@ -155,8 +162,6 @@
         </section>
     </main>
 
-    <script async src="js/script.es6"></script>
+    <script async src="js/script.min.js"></script>
 </body>
 </html>
-
-<!-- 404 page create -->
