@@ -1,2 +1,3 @@
 # vektortech.github.io
-My portfolio site
+
+My portfolio site - No frameworks.

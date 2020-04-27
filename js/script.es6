@@ -123,7 +123,7 @@ const init = () => {
                 CORS enabled, Express API, Passport JS for Authentication`,
                 img: "burga.jpg",
                 code: "https://github.com/VektorTech/gimmi-burga",
-                url: "https://github.com/VektorTech/gimmi-burga"
+                url: "https://gimmi-burga.herokuapp.com/"
             },
             { 
                 title: "Job Haven - WIP", 
@@ -141,7 +141,7 @@ const init = () => {
                 Description: Created a dashboard UI from a design.`,
                 img: "dashboard.jpg",
                 code: "https://github.com/VektorTech/product-design-dashboard",
-                url: "https://github.com/VektorTech/product-design-dashboard"
+                url: "https://product-design-dashboard.herokuapp.com/"
             }
         ];
         const proj_len = _projects.length;
